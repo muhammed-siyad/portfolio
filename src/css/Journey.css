@@ -1,6 +1,7 @@
-/* =========================================
+/* =========================================================
    JOURNEY SECTION
-========================================= */
+   Dark + Purple + Pink + Blue
+   ========================================================= */
 
 .journey-section {
   position: relative;
@@ -9,17 +10,27 @@
 
   padding: 150px 7vw 110px;
 
-  background: #050507;
+  background: #050505;
 
   overflow: hidden;
 
   isolation: isolate;
 }
 
+.journey-container {
+  position: relative;
 
-/* =========================================
+  max-width: 1400px;
+
+  margin: 0 auto;
+
+  z-index: 5;
+}
+
+
+/* =========================================================
    MOVING GRID
-========================================= */
+   ========================================================= */
 
 .journey-grid-bg {
   position: absolute;
@@ -30,18 +41,27 @@
 
   background-image:
     linear-gradient(
-      rgba(139, 92, 246, 0.045) 1px,
+      rgba(124, 58, 237, 0.045) 1px,
       transparent 1px
     ),
     linear-gradient(
       90deg,
-      rgba(139, 92, 246, 0.045) 1px,
+      rgba(59, 130, 246, 0.035) 1px,
       transparent 1px
     );
 
   background-size: 70px 70px;
 
   mask-image:
+    linear-gradient(
+      to bottom,
+      transparent,
+      black 12%,
+      black 88%,
+      transparent
+    );
+
+  -webkit-mask-image:
     linear-gradient(
       to bottom,
       transparent,
@@ -58,7 +78,6 @@
 }
 
 @keyframes journeyGridMove {
-
   from {
     transform: translateY(0);
   }
@@ -66,13 +85,12 @@
   to {
     transform: translateY(70px);
   }
-
 }
 
 
-/* =========================================
+/* =========================================================
    AMBIENT GLOWS
-========================================= */
+   ========================================================= */
 
 .journey-glow {
   position: absolute;
@@ -81,20 +99,22 @@
 
   pointer-events: none;
 
-  filter: blur(130px);
+  filter: blur(140px);
 
   z-index: -4;
 
-  opacity: 0.1;
+  opacity: 0.12;
 }
 
-.journey-glow-one {
 
-  width: 500px;
-  height: 500px;
+/* PURPLE */
+
+.journey-glow-one {
+  width: 520px;
+  height: 520px;
 
   left: -280px;
-  top: 20%;
+  top: 18%;
 
   background: #7c3aed;
 
@@ -106,15 +126,22 @@
     alternate;
 }
 
-.journey-glow-two {
 
-  width: 450px;
-  height: 450px;
+/* PINK + BLUE */
+
+.journey-glow-two {
+  width: 480px;
+  height: 480px;
 
   right: -250px;
   bottom: 15%;
 
-  background: #6366f1;
+  background:
+    linear-gradient(
+      135deg,
+      #ec4899,
+      #3b82f6
+    );
 
   animation:
     journeyGlowTwo
@@ -125,7 +152,6 @@
 }
 
 @keyframes journeyGlowOne {
-
   from {
     transform:
       scale(0.8)
@@ -137,11 +163,9 @@
       scale(1.2)
       translate(160px, 70px);
   }
-
 }
 
 @keyframes journeyGlowTwo {
-
   from {
     transform:
       scale(0.8)
@@ -153,21 +177,19 @@
       scale(1.2)
       translate(-130px, -70px);
   }
-
 }
 
 
-/* =========================================
+/* =========================================================
    ORBITS
-========================================= */
+   ========================================================= */
 
 .journey-orbit {
-
   position: absolute;
 
   border:
     1px solid
-    rgba(139, 92, 246, 0.1);
+    rgba(124, 58, 237, 0.13);
 
   border-radius: 50%;
 
@@ -182,22 +204,32 @@
     infinite;
 }
 
-.orbit-one {
 
+/* PURPLE ORBIT */
+
+.orbit-one {
   width: 500px;
   height: 500px;
 
   right: -300px;
   top: 15%;
+
+  border-color:
+    rgba(124, 58, 237, 0.13);
 }
 
-.orbit-two {
 
+/* BLUE ORBIT */
+
+.orbit-two {
   width: 300px;
   height: 300px;
 
   left: -180px;
   bottom: 10%;
+
+  border-color:
+    rgba(59, 130, 246, 0.12);
 
   animation-direction: reverse;
 
@@ -205,7 +237,6 @@
 }
 
 @keyframes journeyOrbit {
-
   from {
     transform:
       rotate(0deg)
@@ -223,16 +254,14 @@
       rotate(360deg)
       scale(1);
   }
-
 }
 
 
-/* =========================================
+/* =========================================================
    SCANLINE
-========================================= */
+   ========================================================= */
 
 .journey-scanline {
-
   position: absolute;
 
   left: 0;
@@ -246,7 +275,9 @@
     linear-gradient(
       90deg,
       transparent,
-      rgba(139, 92, 246, 0.45),
+      rgba(124, 58, 237, 0.4),
+      rgba(236, 72, 153, 0.35),
+      rgba(59, 130, 246, 0.4),
       transparent
     );
 
@@ -262,7 +293,6 @@
 }
 
 @keyframes journeyScan {
-
   from {
     transform: translateY(0);
   }
@@ -270,42 +300,23 @@
   to {
     transform: translateY(100vh);
   }
-
 }
 
 
-/* =========================================
-   CONTAINER
-========================================= */
-
-.journey-container {
-
-  position: relative;
-
-  max-width: 1400px;
-
-  margin: 0 auto;
-
-  z-index: 5;
-}
-
-
-/* =========================================
+/* =========================================================
    LABEL
-========================================= */
+   ========================================================= */
 
 .journey-section .section-label {
-
   margin-bottom: 75px;
 }
 
 
-/* =========================================
+/* =========================================================
    HEADING
-========================================= */
+   ========================================================= */
 
 .journey-heading {
-
   display: grid;
 
   grid-template-columns:
@@ -320,8 +331,9 @@
 }
 
 .journey-heading h2 {
-
   margin: 0;
+
+  color: #ffffff;
 
   font-size:
     clamp(
@@ -334,49 +346,58 @@
 
   letter-spacing: -0.075em;
 
-  font-weight: 700;
+  font-weight: 800;
 }
 
+
+/* GRADIENT WORD */
+
 .journey-heading h2 span {
+  display: inline-block;
 
   background:
     linear-gradient(
       90deg,
-      #ffffff,
-      #8b5cf6,
-      #6366f1,
-      #ffffff
+      #7c3aed,
+      #ec4899,
+      #3b82f6,
+      #7c3aed
     );
 
-  background-size: 250% auto;
+  background-size: 300% auto;
 
   -webkit-background-clip: text;
-
   background-clip: text;
 
   -webkit-text-fill-color: transparent;
 
   animation:
     journeyGradient
-    5s
-    linear
+    6s
+    ease-in-out
     infinite;
 }
 
 @keyframes journeyGradient {
-
-  from {
+  0% {
     background-position: 0% center;
   }
 
-  to {
-    background-position: 250% center;
+  50% {
+    background-position: 100% center;
   }
 
+  100% {
+    background-position: 0% center;
+  }
 }
 
-.journey-intro {
 
+/* =========================================================
+   INTRO
+   ========================================================= */
+
+.journey-intro {
   max-width: 470px;
 
   margin:
@@ -385,7 +406,8 @@
     10px
     auto;
 
-  color: #777780;
+  color:
+    rgba(255, 255, 255, 0.48);
 
   font-size: 16px;
 
@@ -393,24 +415,22 @@
 }
 
 
-/* =========================================
+/* =========================================================
    TIMELINE
-========================================= */
+   ========================================================= */
 
 .journey-timeline {
-
   position: relative;
 
   padding-bottom: 30px;
 }
 
 
-/* =========================================
+/* =========================================================
    TIMELINE LINE
-========================================= */
+   ========================================================= */
 
 .timeline-line {
-
   position: absolute;
 
   left: 50%;
@@ -424,13 +444,15 @@
     translateX(-50%);
 
   background:
-    rgba(139, 92, 246, 0.12);
+    rgba(124, 58, 237, 0.15);
 
   overflow: hidden;
 }
 
-.timeline-progress {
 
+/* PROGRESS */
+
+.timeline-progress {
   width: 100%;
 
   height: 0;
@@ -438,23 +460,23 @@
   background:
     linear-gradient(
       to bottom,
-      #6366f1,
-      #8b5cf6,
-      rgba(139, 92, 246, 0.15)
+      #3b82f6,
+      #7c3aed,
+      #ec4899,
+      rgba(236, 72, 153, 0.1)
     );
 
   box-shadow:
-    0 0 15px
-    rgba(139, 92, 246, 0.8);
+    0 0 18px
+    rgba(236, 72, 153, 0.65);
 }
 
 
-/* =========================================
+/* =========================================================
    TIMELINE ITEM
-========================================= */
+   ========================================================= */
 
 .journey-item {
-
   position: relative;
 
   display: grid;
@@ -472,12 +494,11 @@
 }
 
 
-/* =========================================
-   NODE
-========================================= */
+/* =========================================================
+   TIMELINE NODE
+   ========================================================= */
 
 .timeline-node {
-
   position: absolute;
 
   left: 50%;
@@ -497,11 +518,12 @@
 
   border:
     1px solid
-    rgba(139, 92, 246, 0.6);
+    rgba(124, 58, 237, 0.65);
 
   border-radius: 50%;
 
-  background: #08080d;
+  background:
+    #080808;
 
   box-shadow:
     0 0 25px
@@ -515,46 +537,45 @@
     box-shadow 0.4s ease;
 }
 
-.journey-item:hover
-.timeline-node {
 
+.journey-item:hover .timeline-node {
   transform:
     translate(-50%, -50%)
     scale(1.18);
 
   border-color:
-    #a78bfa;
+    #ec4899;
 
   box-shadow:
     0 0 35px
-    rgba(139, 92, 246, 0.5);
+    rgba(236, 72, 153, 0.5);
 }
 
-.timeline-node span {
 
-  color: #8b5cf6;
+.timeline-node span {
+  color:
+    #a78bfa;
 
   font-size: 9px;
 
-  font-weight: 600;
+  font-weight: 700;
 
   letter-spacing: 0.08em;
 }
 
 
-/* =========================================
+/* =========================================================
    NODE PULSE
-========================================= */
+   ========================================================= */
 
 .node-pulse {
-
   position: absolute;
 
   inset: -8px;
 
   border:
     1px solid
-    rgba(139, 92, 246, 0.25);
+    rgba(236, 72, 153, 0.3);
 
   border-radius: 50%;
 
@@ -566,46 +587,41 @@
 }
 
 @keyframes nodePulse {
-
   0% {
-
     transform: scale(0.8);
 
     opacity: 0.7;
   }
 
   70% {
-
     transform: scale(1.4);
 
     opacity: 0;
   }
 
   100% {
-
     transform: scale(1.4);
 
     opacity: 0;
   }
-
 }
 
 
-/* =========================================
+/* =========================================================
    YEAR
-========================================= */
+   ========================================================= */
 
 .journey-year {
-
   position: absolute;
 
   top: 50%;
 
-  color: #41414a;
+  color:
+    rgba(255, 255, 255, 0.22);
 
   font-size: 11px;
 
-  font-weight: 600;
+  font-weight: 700;
 
   letter-spacing: 0.2em;
 
@@ -616,31 +632,30 @@
     color 0.4s ease;
 }
 
-.journey-left .journey-year {
 
+.journey-left .journey-year {
   right:
     calc(50% + 65px);
 }
 
-.journey-right .journey-year {
 
+.journey-right .journey-year {
   left:
     calc(50% + 65px);
 }
 
-.journey-item:hover
-.journey-year {
 
-  color: #8b5cf6;
+.journey-item:hover .journey-year {
+  color:
+    #ec4899;
 }
 
 
-/* =========================================
-   CARD
-========================================= */
+/* =========================================================
+   JOURNEY CARD
+   ========================================================= */
 
 .journey-card {
-
   position: relative;
 
   width: 100%;
@@ -656,13 +671,13 @@
   background:
     linear-gradient(
       145deg,
-      rgba(18, 18, 25, 0.96),
-      rgba(8, 8, 12, 0.99)
+      rgba(255, 255, 255, 0.045),
+      rgba(255, 255, 255, 0.012)
     );
 
   border:
     1px solid
-    rgba(139, 92, 246, 0.15);
+    rgba(255, 255, 255, 0.08);
 
   box-shadow:
     0 20px 60px
@@ -688,34 +703,30 @@
 /* LEFT */
 
 .journey-left .journey-card {
-
   grid-column: 1;
 
   justify-self: end;
-
 }
 
 
 /* RIGHT */
 
 .journey-right .journey-card {
-
   grid-column: 3;
 
   justify-self: start;
-
 }
 
 
-.journey-item:hover
-.journey-card {
+/* HOVER */
 
+.journey-item:hover .journey-card {
   transform:
     translateY(-10px)
     translateZ(30px);
 
   border-color:
-    rgba(139, 92, 246, 0.6);
+    rgba(124, 58, 237, 0.55);
 
   box-shadow:
     0 35px 90px
@@ -726,16 +737,44 @@
 }
 
 
-/* =========================================
-   CARD GLOW
-========================================= */
+/* =========================================================
+   CARD TOP GRADIENT
+   ========================================================= */
 
-.journey-card-glow {
+.journey-card::before {
+  content: "";
 
   position: absolute;
 
-  width: 280px;
-  height: 280px;
+  top: 0;
+  left: 8%;
+
+  width: 84%;
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      #7c3aed,
+      #ec4899,
+      #3b82f6,
+      transparent
+    );
+
+  opacity: 0.55;
+}
+
+
+/* =========================================================
+   CARD GLOW
+   ========================================================= */
+
+.journey-card-glow {
+  position: absolute;
+
+  width: 300px;
+  height: 300px;
 
   right: -160px;
   top: -160px;
@@ -745,33 +784,35 @@
   background:
     radial-gradient(
       circle,
-      rgba(139, 92, 246, 0.2),
+      rgba(124, 58, 237, 0.22),
+      rgba(236, 72, 153, 0.08),
       transparent 70%
     );
 
-  filter: blur(12px);
+  filter: blur(14px);
 
   pointer-events: none;
 
   transition:
-    transform 0.7s ease;
+    transform 0.7s ease,
+    opacity 0.7s ease;
 }
 
-.journey-card:hover
-.journey-card-glow {
 
+.journey-card:hover .journey-card-glow {
   transform:
     translate(-100px, 100px)
     scale(1.4);
+
+  opacity: 1;
 }
 
 
-/* =========================================
+/* =========================================================
    CARD TOP
-========================================= */
+   ========================================================= */
 
 .journey-card-top {
-
   position: relative;
 
   display: flex;
@@ -783,20 +824,22 @@
   margin-bottom: 42px;
 }
 
-.journey-category {
 
-  color: #8b5cf6;
+.journey-category {
+  color:
+    #a78bfa;
 
   font-size: 8px;
 
-  font-weight: 600;
+  font-weight: 700;
 
   letter-spacing: 0.18em;
 }
 
-.journey-index {
 
-  color: #41414a;
+.journey-index {
+  color:
+    rgba(255, 255, 255, 0.22);
 
   font-size: 9px;
 
@@ -804,12 +847,11 @@
 }
 
 
-/* =========================================
+/* =========================================================
    TITLE
-========================================= */
+   ========================================================= */
 
 .journey-card h3 {
-
   position: relative;
 
   margin:
@@ -821,7 +863,7 @@
 
   font-size: 24px;
 
-  font-weight: 600;
+  font-weight: 700;
 
   letter-spacing: -0.03em;
 
@@ -830,21 +872,21 @@
     transform 0.3s ease;
 }
 
-.journey-card:hover h3 {
 
-  color: #a78bfa;
+.journey-card:hover h3 {
+  color:
+    #c4b5fd;
 
   transform:
     translateX(5px);
 }
 
 
-/* =========================================
+/* =========================================================
    DESCRIPTION
-========================================= */
+   ========================================================= */
 
 .journey-card p {
-
   position: relative;
 
   margin:
@@ -852,7 +894,8 @@
     0
     25px;
 
-  color: #686872;
+  color:
+    rgba(255, 255, 255, 0.42);
 
   font-size: 13px;
 
@@ -862,18 +905,18 @@
     color 0.3s ease;
 }
 
-.journey-card:hover p {
 
-  color: #92929d;
+.journey-card:hover p {
+  color:
+    rgba(255, 255, 255, 0.65);
 }
 
 
-/* =========================================
+/* =========================================================
    TAGS
-========================================= */
+   ========================================================= */
 
 .journey-tags {
-
   position: relative;
 
   display: flex;
@@ -883,13 +926,14 @@
   gap: 7px;
 }
 
-.journey-tags span {
 
+.journey-tags span {
   padding:
     7px
     10px;
 
-  color: #85858f;
+  color:
+    rgba(255, 255, 255, 0.48);
 
   background:
     rgba(255, 255, 255, 0.025);
@@ -897,6 +941,8 @@
   border:
     1px solid
     rgba(255, 255, 255, 0.07);
+
+  border-radius: 7px;
 
   font-size: 8px;
 
@@ -909,27 +955,31 @@
     transform 0.3s ease;
 }
 
-.journey-tags span:hover {
 
-  color: #ffffff;
+.journey-tags span:hover {
+  color:
+    #ffffff;
 
   border-color:
-    rgba(139, 92, 246, 0.55);
+    rgba(236, 72, 153, 0.55);
 
   background:
-    rgba(139, 92, 246, 0.08);
+    rgba(236, 72, 153, 0.08);
 
   transform:
     translateY(-3px);
+
+  box-shadow:
+    0 8px 20px
+    rgba(236, 72, 153, 0.08);
 }
 
 
-/* =========================================
-   CARD LINE
-========================================= */
+/* =========================================================
+   CARD BOTTOM LINE
+   ========================================================= */
 
 .journey-card-line {
-
   position: absolute;
 
   left: 32px;
@@ -943,7 +993,9 @@
     linear-gradient(
       90deg,
       transparent,
-      rgba(139, 92, 246, 0.8),
+      #7c3aed,
+      #ec4899,
+      #3b82f6,
       transparent
     );
 
@@ -954,20 +1006,18 @@
     transform 0.5s ease;
 }
 
-.journey-card:hover
-.journey-card-line {
 
+.journey-card:hover .journey-card-line {
   transform:
     scaleX(1);
 }
 
 
-/* =========================================
+/* =========================================================
    CORNERS
-========================================= */
+   ========================================================= */
 
 .journey-corner {
-
   position: absolute;
 
   width: 25px;
@@ -981,37 +1031,40 @@
     opacity 0.4s ease;
 }
 
-.corner-top {
 
+/* TOP LEFT */
+
+.corner-top {
   left: 14px;
   top: 14px;
 
   border-top:
     1px solid
-    #8b5cf6;
+    #7c3aed;
 
   border-left:
     1px solid
-    #8b5cf6;
+    #7c3aed;
 }
 
-.corner-bottom {
 
+/* BOTTOM RIGHT */
+
+.corner-bottom {
   right: 14px;
   bottom: 14px;
 
   border-right:
     1px solid
-    #8b5cf6;
+    #3b82f6;
 
   border-bottom:
     1px solid
-    #8b5cf6;
+    #3b82f6;
 }
 
-.journey-card:hover
-.journey-corner {
 
+.journey-card:hover .journey-corner {
   width: 36px;
   height: 36px;
 
@@ -1019,12 +1072,11 @@
 }
 
 
-/* =========================================
+/* =========================================================
    BOTTOM
-========================================= */
+   ========================================================= */
 
 .journey-bottom {
-
   display: flex;
 
   align-items: center;
@@ -1039,15 +1091,16 @@
     1px solid
     rgba(255, 255, 255, 0.08);
 
-  color: #4e4e57;
+  color:
+    rgba(255, 255, 255, 0.25);
 
   font-size: 9px;
 
   letter-spacing: 0.2em;
 }
 
-.journey-bottom-line {
 
+.journey-bottom-line {
   flex: 1;
 
   height: 1px;
@@ -1058,8 +1111,8 @@
   overflow: hidden;
 }
 
-.journey-bottom-line span {
 
+.journey-bottom-line span {
   display: block;
 
   width: 35%;
@@ -1070,7 +1123,8 @@
     linear-gradient(
       90deg,
       transparent,
-      #8b5cf6,
+      #ec4899,
+      #3b82f6,
       transparent
     );
 
@@ -1081,31 +1135,32 @@
     infinite;
 }
 
-@keyframes journeyBottomLine {
 
+@keyframes journeyBottomLine {
   0% {
-    transform: translateX(-120%);
+    transform:
+      translateX(-120%);
   }
 
   50% {
-    transform: translateX(180%);
+    transform:
+      translateX(180%);
   }
 
   100% {
-    transform: translateX(180%);
+    transform:
+      translateX(180%);
   }
-
 }
 
 
-/* =========================================
+/* =========================================================
    TABLET
-========================================= */
+   ========================================================= */
 
 @media (max-width: 1000px) {
 
   .journey-section {
-
     padding:
       110px
       6vw
@@ -1113,7 +1168,6 @@
   }
 
   .journey-heading {
-
     grid-template-columns: 1fr;
 
     gap: 30px;
@@ -1122,23 +1176,20 @@
   }
 
   .journey-intro {
-
     margin: 0;
 
     max-width: 600px;
   }
-
 }
 
 
-/* =========================================
+/* =========================================================
    MOBILE
-========================================= */
+   ========================================================= */
 
 @media (max-width: 700px) {
 
   .journey-section {
-
     padding:
       90px
       5vw
@@ -1146,12 +1197,10 @@
   }
 
   .journey-section .section-label {
-
     margin-bottom: 60px;
   }
 
   .journey-heading h2 {
-
     font-size:
       clamp(
         55px,
@@ -1161,17 +1210,17 @@
   }
 
   .journey-intro {
-
     font-size: 14px;
 
     line-height: 1.7;
   }
 
 
-  /* Move timeline */
+  /* -----------------------------------------
+     MOBILE TIMELINE
+  ----------------------------------------- */
 
   .timeline-line {
-
     left: 18px;
 
     transform: none;
@@ -1179,7 +1228,6 @@
 
 
   .journey-item {
-
     display: block;
 
     min-height: auto;
@@ -1190,9 +1238,11 @@
   }
 
 
-  .timeline-node {
+  /* NODE */
 
+  .timeline-node {
     left: 18px;
+
     top: 35px;
 
     width: 38px;
@@ -1202,17 +1252,17 @@
       translate(-50%, 0);
   }
 
-  .journey-item:hover
-  .timeline-node {
 
+  .journey-item:hover .timeline-node {
     transform:
       translate(-50%, 0)
       scale(1.1);
   }
 
 
-  .journey-year {
+  /* YEAR */
 
+  .journey-year {
     position: relative;
 
     top: auto !important;
@@ -1228,9 +1278,10 @@
   }
 
 
+  /* CARDS */
+
   .journey-left .journey-card,
   .journey-right .journey-card {
-
     display: block;
 
     width: 100%;
@@ -1240,37 +1291,32 @@
     min-height: auto;
 
     justify-self: auto;
-
   }
 
 
   .journey-card {
-
     padding: 27px;
-
   }
 
 
   .journey-card-top {
-
     margin-bottom: 32px;
   }
 
 
   .journey-card h3 {
-
     font-size: 21px;
   }
 
 
   .journey-card p {
-
     font-size: 13px;
   }
 
 
-  .journey-bottom {
+  /* BOTTOM */
 
+  .journey-bottom {
     flex-direction: column;
 
     align-items: flex-start;
@@ -1280,59 +1326,55 @@
 
 
   .journey-bottom-line {
-
     width: 100%;
 
     flex: none;
   }
-
 }
 
 
-/* =========================================
+/* =========================================================
    SMALL MOBILE
-========================================= */
+   ========================================================= */
 
 @media (max-width: 450px) {
 
   .journey-item {
-
     padding-left: 48px;
   }
 
-  .timeline-line {
 
+  .timeline-line {
     left: 14px;
   }
 
-  .timeline-node {
 
+  .timeline-node {
     left: 14px;
 
     width: 34px;
     height: 34px;
   }
 
-  .journey-card {
 
+  .journey-card {
     padding: 23px;
   }
 
-  .journey-tags span {
 
+  .journey-tags span {
     font-size: 7px;
 
     padding:
       6px
       8px;
   }
-
 }
 
 
-/* =========================================
+/* =========================================================
    REDUCED MOTION
-========================================= */
+   ========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
 
@@ -1343,7 +1385,6 @@
   .journey-heading h2 span,
   .node-pulse,
   .journey-bottom-line span {
-
     animation: none;
   }
 
@@ -1353,8 +1394,6 @@
   .journey-card p,
   .journey-tags span,
   .journey-corner {
-
     transition: none;
   }
-
 }
