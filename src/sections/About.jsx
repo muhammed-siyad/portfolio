@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 import "../css/About.css";
-import profileImage from "../assets/profile.jpg";
+import profileImage from "../assets/profile.JPG";
 
 function About() {
   const [mouse, setMouse] = useState({
