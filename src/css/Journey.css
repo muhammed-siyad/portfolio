@@ -1,0 +1,1360 @@
+/* =========================================
+   JOURNEY SECTION
+========================================= */
+
+.journey-section {
+  position: relative;
+
+  min-height: 100vh;
+
+  padding: 150px 7vw 110px;
+
+  background: #050507;
+
+  overflow: hidden;
+
+  isolation: isolate;
+}
+
+
+/* =========================================
+   MOVING GRID
+========================================= */
+
+.journey-grid-bg {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: -6;
+
+  background-image:
+    linear-gradient(
+      rgba(139, 92, 246, 0.045) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(139, 92, 246, 0.045) 1px,
+      transparent 1px
+    );
+
+  background-size: 70px 70px;
+
+  mask-image:
+    linear-gradient(
+      to bottom,
+      transparent,
+      black 12%,
+      black 88%,
+      transparent
+    );
+
+  animation:
+    journeyGridMove
+    22s
+    linear
+    infinite;
+}
+
+@keyframes journeyGridMove {
+
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(70px);
+  }
+
+}
+
+
+/* =========================================
+   AMBIENT GLOWS
+========================================= */
+
+.journey-glow {
+  position: absolute;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  filter: blur(130px);
+
+  z-index: -4;
+
+  opacity: 0.1;
+}
+
+.journey-glow-one {
+
+  width: 500px;
+  height: 500px;
+
+  left: -280px;
+  top: 20%;
+
+  background: #7c3aed;
+
+  animation:
+    journeyGlowOne
+    9s
+    ease-in-out
+    infinite
+    alternate;
+}
+
+.journey-glow-two {
+
+  width: 450px;
+  height: 450px;
+
+  right: -250px;
+  bottom: 15%;
+
+  background: #6366f1;
+
+  animation:
+    journeyGlowTwo
+    10s
+    ease-in-out
+    infinite
+    alternate;
+}
+
+@keyframes journeyGlowOne {
+
+  from {
+    transform:
+      scale(0.8)
+      translate(0, 0);
+  }
+
+  to {
+    transform:
+      scale(1.2)
+      translate(160px, 70px);
+  }
+
+}
+
+@keyframes journeyGlowTwo {
+
+  from {
+    transform:
+      scale(0.8)
+      translate(0, 0);
+  }
+
+  to {
+    transform:
+      scale(1.2)
+      translate(-130px, -70px);
+  }
+
+}
+
+
+/* =========================================
+   ORBITS
+========================================= */
+
+.journey-orbit {
+
+  position: absolute;
+
+  border:
+    1px solid
+    rgba(139, 92, 246, 0.1);
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  z-index: -3;
+
+  animation:
+    journeyOrbit
+    20s
+    linear
+    infinite;
+}
+
+.orbit-one {
+
+  width: 500px;
+  height: 500px;
+
+  right: -300px;
+  top: 15%;
+}
+
+.orbit-two {
+
+  width: 300px;
+  height: 300px;
+
+  left: -180px;
+  bottom: 10%;
+
+  animation-direction: reverse;
+
+  animation-duration: 15s;
+}
+
+@keyframes journeyOrbit {
+
+  from {
+    transform:
+      rotate(0deg)
+      scale(1);
+  }
+
+  50% {
+    transform:
+      rotate(180deg)
+      scale(1.08);
+  }
+
+  to {
+    transform:
+      rotate(360deg)
+      scale(1);
+  }
+
+}
+
+
+/* =========================================
+   SCANLINE
+========================================= */
+
+.journey-scanline {
+
+  position: absolute;
+
+  left: 0;
+  right: 0;
+
+  top: 0;
+
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(139, 92, 246, 0.45),
+      transparent
+    );
+
+  opacity: 0.5;
+
+  pointer-events: none;
+
+  animation:
+    journeyScan
+    9s
+    linear
+    infinite;
+}
+
+@keyframes journeyScan {
+
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(100vh);
+  }
+
+}
+
+
+/* =========================================
+   CONTAINER
+========================================= */
+
+.journey-container {
+
+  position: relative;
+
+  max-width: 1400px;
+
+  margin: 0 auto;
+
+  z-index: 5;
+}
+
+
+/* =========================================
+   LABEL
+========================================= */
+
+.journey-section .section-label {
+
+  margin-bottom: 75px;
+}
+
+
+/* =========================================
+   HEADING
+========================================= */
+
+.journey-heading {
+
+  display: grid;
+
+  grid-template-columns:
+    1.1fr
+    0.9fr;
+
+  align-items: end;
+
+  gap: 80px;
+
+  margin-bottom: 130px;
+}
+
+.journey-heading h2 {
+
+  margin: 0;
+
+  font-size:
+    clamp(
+      65px,
+      9vw,
+      125px
+    );
+
+  line-height: 0.84;
+
+  letter-spacing: -0.075em;
+
+  font-weight: 700;
+}
+
+.journey-heading h2 span {
+
+  background:
+    linear-gradient(
+      90deg,
+      #ffffff,
+      #8b5cf6,
+      #6366f1,
+      #ffffff
+    );
+
+  background-size: 250% auto;
+
+  -webkit-background-clip: text;
+
+  background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+
+  animation:
+    journeyGradient
+    5s
+    linear
+    infinite;
+}
+
+@keyframes journeyGradient {
+
+  from {
+    background-position: 0% center;
+  }
+
+  to {
+    background-position: 250% center;
+  }
+
+}
+
+.journey-intro {
+
+  max-width: 470px;
+
+  margin:
+    0
+    0
+    10px
+    auto;
+
+  color: #777780;
+
+  font-size: 16px;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================
+   TIMELINE
+========================================= */
+
+.journey-timeline {
+
+  position: relative;
+
+  padding-bottom: 30px;
+}
+
+
+/* =========================================
+   TIMELINE LINE
+========================================= */
+
+.timeline-line {
+
+  position: absolute;
+
+  left: 50%;
+
+  top: 0;
+  bottom: 0;
+
+  width: 1px;
+
+  transform:
+    translateX(-50%);
+
+  background:
+    rgba(139, 92, 246, 0.12);
+
+  overflow: hidden;
+}
+
+.timeline-progress {
+
+  width: 100%;
+
+  height: 0;
+
+  background:
+    linear-gradient(
+      to bottom,
+      #6366f1,
+      #8b5cf6,
+      rgba(139, 92, 246, 0.15)
+    );
+
+  box-shadow:
+    0 0 15px
+    rgba(139, 92, 246, 0.8);
+}
+
+
+/* =========================================
+   TIMELINE ITEM
+========================================= */
+
+.journey-item {
+
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    100px
+    1fr;
+
+  align-items: center;
+
+  min-height: 360px;
+
+  perspective: 1200px;
+}
+
+
+/* =========================================
+   NODE
+========================================= */
+
+.timeline-node {
+
+  position: absolute;
+
+  left: 50%;
+  top: 50%;
+
+  width: 48px;
+  height: 48px;
+
+  transform:
+    translate(-50%, -50%);
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border:
+    1px solid
+    rgba(139, 92, 246, 0.6);
+
+  border-radius: 50%;
+
+  background: #08080d;
+
+  box-shadow:
+    0 0 25px
+    rgba(124, 58, 237, 0.2);
+
+  z-index: 10;
+
+  transition:
+    transform 0.4s ease,
+    border-color 0.4s ease,
+    box-shadow 0.4s ease;
+}
+
+.journey-item:hover
+.timeline-node {
+
+  transform:
+    translate(-50%, -50%)
+    scale(1.18);
+
+  border-color:
+    #a78bfa;
+
+  box-shadow:
+    0 0 35px
+    rgba(139, 92, 246, 0.5);
+}
+
+.timeline-node span {
+
+  color: #8b5cf6;
+
+  font-size: 9px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.08em;
+}
+
+
+/* =========================================
+   NODE PULSE
+========================================= */
+
+.node-pulse {
+
+  position: absolute;
+
+  inset: -8px;
+
+  border:
+    1px solid
+    rgba(139, 92, 246, 0.25);
+
+  border-radius: 50%;
+
+  animation:
+    nodePulse
+    2.5s
+    ease-out
+    infinite;
+}
+
+@keyframes nodePulse {
+
+  0% {
+
+    transform: scale(0.8);
+
+    opacity: 0.7;
+  }
+
+  70% {
+
+    transform: scale(1.4);
+
+    opacity: 0;
+  }
+
+  100% {
+
+    transform: scale(1.4);
+
+    opacity: 0;
+  }
+
+}
+
+
+/* =========================================
+   YEAR
+========================================= */
+
+.journey-year {
+
+  position: absolute;
+
+  top: 50%;
+
+  color: #41414a;
+
+  font-size: 11px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.2em;
+
+  transform:
+    translateY(-50%);
+
+  transition:
+    color 0.4s ease;
+}
+
+.journey-left .journey-year {
+
+  right:
+    calc(50% + 65px);
+}
+
+.journey-right .journey-year {
+
+  left:
+    calc(50% + 65px);
+}
+
+.journey-item:hover
+.journey-year {
+
+  color: #8b5cf6;
+}
+
+
+/* =========================================
+   CARD
+========================================= */
+
+.journey-card {
+
+  position: relative;
+
+  width: 100%;
+
+  max-width: 480px;
+
+  min-height: 270px;
+
+  padding: 32px;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba(18, 18, 25, 0.96),
+      rgba(8, 8, 12, 0.99)
+    );
+
+  border:
+    1px solid
+    rgba(139, 92, 246, 0.15);
+
+  box-shadow:
+    0 20px 60px
+    rgba(0, 0, 0, 0.4);
+
+  transform:
+    translateZ(0);
+
+  transition:
+    transform 0.5s
+      cubic-bezier(
+        0.22,
+        1,
+        0.36,
+        1
+      ),
+    border-color 0.4s ease,
+    box-shadow 0.4s ease,
+    background 0.4s ease;
+}
+
+
+/* LEFT */
+
+.journey-left .journey-card {
+
+  grid-column: 1;
+
+  justify-self: end;
+
+}
+
+
+/* RIGHT */
+
+.journey-right .journey-card {
+
+  grid-column: 3;
+
+  justify-self: start;
+
+}
+
+
+.journey-item:hover
+.journey-card {
+
+  transform:
+    translateY(-10px)
+    translateZ(30px);
+
+  border-color:
+    rgba(139, 92, 246, 0.6);
+
+  box-shadow:
+    0 35px 90px
+    rgba(0, 0, 0, 0.6),
+
+    0 0 60px
+    rgba(124, 58, 237, 0.1);
+}
+
+
+/* =========================================
+   CARD GLOW
+========================================= */
+
+.journey-card-glow {
+
+  position: absolute;
+
+  width: 280px;
+  height: 280px;
+
+  right: -160px;
+  top: -160px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(139, 92, 246, 0.2),
+      transparent 70%
+    );
+
+  filter: blur(12px);
+
+  pointer-events: none;
+
+  transition:
+    transform 0.7s ease;
+}
+
+.journey-card:hover
+.journey-card-glow {
+
+  transform:
+    translate(-100px, 100px)
+    scale(1.4);
+}
+
+
+/* =========================================
+   CARD TOP
+========================================= */
+
+.journey-card-top {
+
+  position: relative;
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-bottom: 42px;
+}
+
+.journey-category {
+
+  color: #8b5cf6;
+
+  font-size: 8px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.18em;
+}
+
+.journey-index {
+
+  color: #41414a;
+
+  font-size: 9px;
+
+  letter-spacing: 0.15em;
+}
+
+
+/* =========================================
+   TITLE
+========================================= */
+
+.journey-card h3 {
+
+  position: relative;
+
+  margin:
+    0
+    0
+    15px;
+
+  color: #ffffff;
+
+  font-size: 24px;
+
+  font-weight: 600;
+
+  letter-spacing: -0.03em;
+
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.journey-card:hover h3 {
+
+  color: #a78bfa;
+
+  transform:
+    translateX(5px);
+}
+
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.journey-card p {
+
+  position: relative;
+
+  margin:
+    0
+    0
+    25px;
+
+  color: #686872;
+
+  font-size: 13px;
+
+  line-height: 1.75;
+
+  transition:
+    color 0.3s ease;
+}
+
+.journey-card:hover p {
+
+  color: #92929d;
+}
+
+
+/* =========================================
+   TAGS
+========================================= */
+
+.journey-tags {
+
+  position: relative;
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 7px;
+}
+
+.journey-tags span {
+
+  padding:
+    7px
+    10px;
+
+  color: #85858f;
+
+  background:
+    rgba(255, 255, 255, 0.025);
+
+  border:
+    1px solid
+    rgba(255, 255, 255, 0.07);
+
+  font-size: 8px;
+
+  letter-spacing: 0.08em;
+
+  transition:
+    color 0.3s ease,
+    border-color 0.3s ease,
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+.journey-tags span:hover {
+
+  color: #ffffff;
+
+  border-color:
+    rgba(139, 92, 246, 0.55);
+
+  background:
+    rgba(139, 92, 246, 0.08);
+
+  transform:
+    translateY(-3px);
+}
+
+
+/* =========================================
+   CARD LINE
+========================================= */
+
+.journey-card-line {
+
+  position: absolute;
+
+  left: 32px;
+  right: 32px;
+
+  bottom: 0;
+
+  height: 1px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      rgba(139, 92, 246, 0.8),
+      transparent
+    );
+
+  transform:
+    scaleX(0);
+
+  transition:
+    transform 0.5s ease;
+}
+
+.journey-card:hover
+.journey-card-line {
+
+  transform:
+    scaleX(1);
+}
+
+
+/* =========================================
+   CORNERS
+========================================= */
+
+.journey-corner {
+
+  position: absolute;
+
+  width: 25px;
+  height: 25px;
+
+  opacity: 0.5;
+
+  transition:
+    width 0.4s ease,
+    height 0.4s ease,
+    opacity 0.4s ease;
+}
+
+.corner-top {
+
+  left: 14px;
+  top: 14px;
+
+  border-top:
+    1px solid
+    #8b5cf6;
+
+  border-left:
+    1px solid
+    #8b5cf6;
+}
+
+.corner-bottom {
+
+  right: 14px;
+  bottom: 14px;
+
+  border-right:
+    1px solid
+    #8b5cf6;
+
+  border-bottom:
+    1px solid
+    #8b5cf6;
+}
+
+.journey-card:hover
+.journey-corner {
+
+  width: 36px;
+  height: 36px;
+
+  opacity: 1;
+}
+
+
+/* =========================================
+   BOTTOM
+========================================= */
+
+.journey-bottom {
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 25px;
+
+  margin-top: 90px;
+
+  padding-top: 30px;
+
+  border-top:
+    1px solid
+    rgba(255, 255, 255, 0.08);
+
+  color: #4e4e57;
+
+  font-size: 9px;
+
+  letter-spacing: 0.2em;
+}
+
+.journey-bottom-line {
+
+  flex: 1;
+
+  height: 1px;
+
+  background:
+    rgba(255, 255, 255, 0.08);
+
+  overflow: hidden;
+}
+
+.journey-bottom-line span {
+
+  display: block;
+
+  width: 35%;
+
+  height: 100%;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      #8b5cf6,
+      transparent
+    );
+
+  animation:
+    journeyBottomLine
+    3s
+    ease-in-out
+    infinite;
+}
+
+@keyframes journeyBottomLine {
+
+  0% {
+    transform: translateX(-120%);
+  }
+
+  50% {
+    transform: translateX(180%);
+  }
+
+  100% {
+    transform: translateX(180%);
+  }
+
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1000px) {
+
+  .journey-section {
+
+    padding:
+      110px
+      6vw
+      80px;
+  }
+
+  .journey-heading {
+
+    grid-template-columns: 1fr;
+
+    gap: 30px;
+
+    margin-bottom: 90px;
+  }
+
+  .journey-intro {
+
+    margin: 0;
+
+    max-width: 600px;
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+  .journey-section {
+
+    padding:
+      90px
+      5vw
+      60px;
+  }
+
+  .journey-section .section-label {
+
+    margin-bottom: 60px;
+  }
+
+  .journey-heading h2 {
+
+    font-size:
+      clamp(
+        55px,
+        16vw,
+        90px
+      );
+  }
+
+  .journey-intro {
+
+    font-size: 14px;
+
+    line-height: 1.7;
+  }
+
+
+  /* Move timeline */
+
+  .timeline-line {
+
+    left: 18px;
+
+    transform: none;
+  }
+
+
+  .journey-item {
+
+    display: block;
+
+    min-height: auto;
+
+    padding-left: 55px;
+
+    margin-bottom: 55px;
+  }
+
+
+  .timeline-node {
+
+    left: 18px;
+    top: 35px;
+
+    width: 38px;
+    height: 38px;
+
+    transform:
+      translate(-50%, 0);
+  }
+
+  .journey-item:hover
+  .timeline-node {
+
+    transform:
+      translate(-50%, 0)
+      scale(1.1);
+  }
+
+
+  .journey-year {
+
+    position: relative;
+
+    top: auto !important;
+
+    left: auto !important;
+    right: auto !important;
+
+    margin-bottom: 12px;
+
+    transform: none;
+
+    font-size: 9px;
+  }
+
+
+  .journey-left .journey-card,
+  .journey-right .journey-card {
+
+    display: block;
+
+    width: 100%;
+
+    max-width: none;
+
+    min-height: auto;
+
+    justify-self: auto;
+
+  }
+
+
+  .journey-card {
+
+    padding: 27px;
+
+  }
+
+
+  .journey-card-top {
+
+    margin-bottom: 32px;
+  }
+
+
+  .journey-card h3 {
+
+    font-size: 21px;
+  }
+
+
+  .journey-card p {
+
+    font-size: 13px;
+  }
+
+
+  .journey-bottom {
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 15px;
+  }
+
+
+  .journey-bottom-line {
+
+    width: 100%;
+
+    flex: none;
+  }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 450px) {
+
+  .journey-item {
+
+    padding-left: 48px;
+  }
+
+  .timeline-line {
+
+    left: 14px;
+  }
+
+  .timeline-node {
+
+    left: 14px;
+
+    width: 34px;
+    height: 34px;
+  }
+
+  .journey-card {
+
+    padding: 23px;
+  }
+
+  .journey-tags span {
+
+    font-size: 7px;
+
+    padding:
+      6px
+      8px;
+  }
+
+}
+
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .journey-grid-bg,
+  .journey-glow,
+  .journey-orbit,
+  .journey-scanline,
+  .journey-heading h2 span,
+  .node-pulse,
+  .journey-bottom-line span {
+
+    animation: none;
+  }
+
+  .journey-card,
+  .timeline-node,
+  .journey-card h3,
+  .journey-card p,
+  .journey-tags span,
+  .journey-corner {
+
+    transition: none;
+  }
+
+}

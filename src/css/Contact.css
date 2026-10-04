@@ -1,0 +1,782 @@
+/* =========================================
+   CONTACT SECTION
+========================================= */
+
+.contact-section {
+  position: relative;
+
+  min-height: 100vh;
+
+  padding: 150px 7vw 40px;
+
+  background: #050507;
+
+  overflow: hidden;
+
+  isolation: isolate;
+
+  display: flex;
+
+  flex-direction: column;
+}
+
+
+/* =========================================
+   GRID
+========================================= */
+
+.contact-grid {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: -5;
+
+  background-image:
+    linear-gradient(
+      rgba(139, 92, 246, 0.045) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(139, 92, 246, 0.045) 1px,
+      transparent 1px
+    );
+
+  background-size: 70px 70px;
+
+  mask-image:
+    linear-gradient(
+      to bottom,
+      transparent,
+      black 15%,
+      black 85%,
+      transparent
+    );
+
+  animation:
+    contactGridMove
+    20s
+    linear
+    infinite;
+}
+
+@keyframes contactGridMove {
+
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(70px);
+  }
+
+}
+
+
+/* =========================================
+   GLOWS
+========================================= */
+
+.contact-glow {
+
+  position: absolute;
+
+  border-radius: 50%;
+
+  filter: blur(140px);
+
+  pointer-events: none;
+
+  z-index: -4;
+
+  opacity: 0.12;
+}
+
+.contact-glow-one {
+
+  width: 550px;
+  height: 550px;
+
+  left: -300px;
+  top: 20%;
+
+  background: #7c3aed;
+
+  animation:
+    contactGlowOne
+    8s
+    ease-in-out
+    infinite
+    alternate;
+}
+
+.contact-glow-two {
+
+  width: 500px;
+  height: 500px;
+
+  right: -250px;
+  bottom: 5%;
+
+  background: #6366f1;
+
+  animation:
+    contactGlowTwo
+    9s
+    ease-in-out
+    infinite
+    alternate;
+}
+
+@keyframes contactGlowOne {
+
+  from {
+    transform:
+      scale(0.8)
+      translate(0, 0);
+  }
+
+  to {
+    transform:
+      scale(1.2)
+      translate(180px, -50px);
+  }
+
+}
+
+@keyframes contactGlowTwo {
+
+  from {
+    transform:
+      scale(0.8)
+      translate(0, 0);
+  }
+
+  to {
+    transform:
+      scale(1.25)
+      translate(-150px, -100px);
+  }
+
+}
+
+
+/* =========================================
+   CONTAINER
+========================================= */
+
+.contact-container {
+
+  position: relative;
+
+  width: 100%;
+
+  max-width: 1400px;
+
+  margin: 0 auto;
+
+  flex: 1;
+
+  display: flex;
+
+  flex-direction: column;
+}
+
+
+/* =========================================
+   SECTION LABEL
+========================================= */
+
+.contact-section .section-label {
+
+  margin-bottom: 80px;
+}
+
+
+/* =========================================
+   MAIN
+========================================= */
+
+.contact-main {
+
+  display: grid;
+
+  grid-template-columns:
+    1.1fr
+    0.9fr;
+
+  align-items: end;
+
+  gap: 80px;
+
+  margin-bottom: 80px;
+}
+
+
+/* =========================================
+   HEADING
+========================================= */
+
+.contact-heading {
+
+  margin: 0;
+
+  font-size:
+    clamp(
+      75px,
+      11vw,
+      155px
+    );
+
+  line-height: 0.8;
+
+  letter-spacing: -0.085em;
+
+  font-weight: 500;
+}
+
+.contact-heading span {
+
+  color: #ffffff;
+}
+
+.contact-heading strong {
+
+  font-weight: 700;
+
+  background:
+    linear-gradient(
+      90deg,
+      #ffffff,
+      #8b5cf6,
+      #6366f1,
+      #ffffff
+    );
+
+  background-size: 250% auto;
+
+  -webkit-background-clip: text;
+
+  background-clip: text;
+
+  -webkit-text-fill-color: transparent;
+
+  animation:
+    contactGradient
+    5s
+    linear
+    infinite;
+}
+
+@keyframes contactGradient {
+
+  from {
+    background-position: 0% center;
+  }
+
+  to {
+    background-position: 250% center;
+  }
+
+}
+
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.contact-description {
+
+  max-width: 450px;
+
+  margin:
+    0
+    0
+    15px
+    auto;
+}
+
+.contact-description p {
+
+  margin: 0 0 18px;
+
+  color: #71717b;
+
+  font-size: 15px;
+
+  line-height: 1.8;
+}
+
+.contact-description p:last-child {
+
+  margin-bottom: 0;
+
+  color: #50505a;
+}
+
+
+/* =========================================
+   EMAIL CTA
+========================================= */
+
+.contact-email {
+
+  position: relative;
+
+  display: grid;
+
+  grid-template-columns:
+    130px
+    1fr
+    auto;
+
+  align-items: center;
+
+  gap: 30px;
+
+  width: 100%;
+
+  padding:
+    32px
+    35px;
+
+  text-decoration: none;
+
+  background:
+    linear-gradient(
+      110deg,
+      rgba(139, 92, 246, 0.09),
+      rgba(255, 255, 255, 0.02)
+    );
+
+  border:
+    1px solid
+    rgba(139, 92, 246, 0.25);
+
+  box-shadow:
+    0 20px 60px
+    rgba(0, 0, 0, 0.35);
+
+  overflow: hidden;
+
+  transition:
+    border-color 0.4s ease,
+    box-shadow 0.4s ease,
+    background 0.4s ease;
+}
+
+.contact-email::before {
+
+  content: "";
+
+  position: absolute;
+
+  left: 0;
+  top: 0;
+
+  width: 3px;
+  height: 100%;
+
+  background:
+    linear-gradient(
+      to bottom,
+      transparent,
+      #8b5cf6,
+      transparent
+    );
+
+  transform:
+    scaleY(0);
+
+  transform-origin: center;
+
+  transition:
+    transform 0.5s ease;
+}
+
+.contact-email:hover {
+
+  border-color:
+    rgba(139, 92, 246, 0.7);
+
+  background:
+    linear-gradient(
+      110deg,
+      rgba(139, 92, 246, 0.14),
+      rgba(255, 255, 255, 0.03)
+    );
+
+  box-shadow:
+    0 30px 90px
+    rgba(0, 0, 0, 0.55),
+
+    0 0 60px
+    rgba(124, 58, 237, 0.12);
+}
+
+.contact-email:hover::before {
+
+  transform:
+    scaleY(1);
+}
+
+
+/* =========================================
+   EMAIL TEXT
+========================================= */
+
+.email-label {
+
+  color: #8b5cf6;
+
+  font-size: 8px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.18em;
+}
+
+.email-text {
+
+  color: #ffffff;
+
+  font-size:
+    clamp(
+      18px,
+      2.5vw,
+      30px
+    );
+
+  letter-spacing: -0.03em;
+
+  transition:
+    color 0.3s ease;
+}
+
+.contact-email:hover
+.email-text {
+
+  color: #c4b5fd;
+}
+
+.email-arrow {
+
+  color: #8b5cf6;
+
+  font-size: 25px;
+
+  transition:
+    transform 0.4s ease,
+    color 0.3s ease;
+}
+
+.contact-email:hover
+.email-arrow {
+
+  color: #ffffff;
+
+  transform:
+    translate(
+      5px,
+      -5px
+    );
+}
+
+
+/* =========================================
+   SOCIALS
+========================================= */
+
+.contact-socials {
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  margin-top: 45px;
+
+  border-top:
+    1px solid
+    rgba(255, 255, 255, 0.08);
+
+  border-bottom:
+    1px solid
+    rgba(255, 255, 255, 0.08);
+}
+
+.contact-socials a {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  padding:
+    23px 25px;
+
+  color: #676770;
+
+  text-decoration: none;
+
+  font-size: 9px;
+
+  font-weight: 600;
+
+  letter-spacing: 0.18em;
+
+  border-right:
+    1px solid
+    rgba(255, 255, 255, 0.08);
+
+  transition:
+    color 0.3s ease,
+    background 0.3s ease,
+    padding 0.3s ease;
+}
+
+.contact-socials a:last-child {
+
+  border-right: none;
+}
+
+.contact-socials a:hover {
+
+  color: #ffffff;
+
+  background:
+    rgba(139, 92, 246, 0.06);
+
+  padding-left: 32px;
+}
+
+.contact-socials a span:last-child {
+
+  color: #8b5cf6;
+
+  font-size: 15px;
+
+  transition:
+    transform 0.3s ease;
+}
+
+.contact-socials a:hover
+span:last-child {
+
+  transform:
+    translate(
+      4px,
+      -4px
+    );
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.contact-footer {
+
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  gap: 20px;
+
+  margin-top: auto;
+
+  padding-top: 35px;
+
+  color: #3f3f47;
+
+  font-size: 8px;
+
+  letter-spacing: 0.16em;
+
+  border-top:
+    1px solid
+    rgba(255, 255, 255, 0.05);
+}
+
+.contact-footer span:nth-child(2) {
+
+  color: #50505a;
+}
+
+
+/* =========================================
+   RESPONSIVE
+========================================= */
+
+@media (max-width: 1000px) {
+
+  .contact-section {
+
+    padding:
+      110px
+      6vw
+      35px;
+  }
+
+  .contact-main {
+
+    grid-template-columns: 1fr;
+
+    gap: 45px;
+
+    margin-bottom: 65px;
+  }
+
+  .contact-description {
+
+    margin: 0;
+
+    max-width: 600px;
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 650px) {
+
+  .contact-section {
+
+    min-height: auto;
+
+    padding:
+      90px
+      5vw
+      30px;
+  }
+
+  .contact-section .section-label {
+
+    margin-bottom: 60px;
+  }
+
+  .contact-heading {
+
+    font-size:
+      clamp(
+        65px,
+        18vw,
+        100px
+      );
+  }
+
+  .contact-description p {
+
+    font-size: 14px;
+  }
+
+
+  .contact-email {
+
+    grid-template-columns: 1fr auto;
+
+    gap: 10px;
+
+    padding:
+      25px;
+  }
+
+  .email-label {
+
+    grid-column:
+      1 / -1;
+  }
+
+  .email-text {
+
+    font-size: 16px;
+
+    word-break: break-word;
+  }
+
+
+  .contact-socials {
+
+    grid-template-columns: 1fr;
+  }
+
+  .contact-socials a {
+
+    border-right: none;
+
+    border-bottom:
+      1px solid
+      rgba(255, 255, 255, 0.08);
+  }
+
+  .contact-socials a:last-child {
+
+    border-bottom: none;
+  }
+
+
+  .contact-footer {
+
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 12px;
+
+    padding-top: 25px;
+  }
+
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 400px) {
+
+  .contact-heading {
+
+    font-size: 62px;
+  }
+
+  .contact-email {
+
+    padding: 22px;
+  }
+
+  .email-text {
+
+    font-size: 14px;
+  }
+
+}
+
+
+/* =========================================
+   REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .contact-grid,
+  .contact-glow,
+  .contact-heading strong {
+
+    animation: none;
+  }
+
+  .contact-email,
+  .contact-socials a {
+
+    transition: none;
+  }
+
+}
