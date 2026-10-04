@@ -34,6 +34,7 @@ function Hero() {
         "--mouse-y": `${mouse.y}%`,
       }}
     >
+      {/* BACKGROUND */}
       <div className="hero-grid" />
 
       <div className="hero-glow hero-glow-one" />
@@ -44,38 +45,20 @@ function Hero() {
 
       <div className="hero-cursor-light" />
 
-      {/* NAVBAR */}
-      <motion.nav
-        className="hero-navbar"
-        initial={{ opacity: 0, y: -30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-      >
-        <a href="#home" className="hero-logo">
-          S<span>.</span>
-        </a>
-
-        <div className="hero-nav-links">
-          <a href="#about">ABOUT</a>
-          <a href="#skills">SKILLS</a>
-          <a href="#projects">PROJECTS</a>
-          <a href="#journey">JOURNEY</a>
-          <a href="#contact">CONTACT</a>
-        </div>
-
-        <a href="#contact" className="hero-talk-button">
-          LET'S TALK
-          <span>↗</span>
-        </a>
-      </motion.nav>
-
       {/* HERO CONTENT */}
       <div className="hero-container">
 
+        {/* STATUS */}
         <motion.div
           className="hero-status"
-          initial={{ opacity: 0, x: -30 }}
-          animate={{ opacity: 1, x: 0 }}
+          initial={{
+            opacity: 0,
+            x: -30,
+          }}
+          animate={{
+            opacity: 1,
+            x: 0,
+          }}
           transition={{
             duration: 0.8,
             delay: 0.2,
@@ -85,6 +68,8 @@ function Hero() {
           AVAILABLE FOR OPPORTUNITIES
         </motion.div>
 
+
+        {/* TITLE */}
         <motion.h1
           className="hero-title"
           initial={{
@@ -108,6 +93,8 @@ function Hero() {
           <span>SIYAD E P.</span>
         </motion.h1>
 
+
+        {/* SUBTITLE */}
         <motion.div
           className="hero-subtitle"
           initial={{
@@ -124,12 +111,18 @@ function Hero() {
           }}
         >
           BCA STUDENT
+
           <span>×</span>
+
           CLOUD ENGINEER
+
           <span>×</span>
+
           WEB DEVELOPER
         </motion.div>
 
+
+        {/* DESCRIPTION */}
         <motion.p
           className="hero-description"
           initial={{
@@ -150,6 +143,7 @@ function Hero() {
           digital products.
         </motion.p>
 
+
         {/* BUTTONS */}
         <motion.div
           className="hero-buttons"
@@ -166,6 +160,7 @@ function Hero() {
             delay: 0.9,
           }}
         >
+          {/* VIEW PROJECTS */}
           <a
             href="#projects"
             className="hero-primary-button"
@@ -174,6 +169,8 @@ function Hero() {
             <span>↓</span>
           </a>
 
+
+          {/* RESUME */}
           <a
             href={resume}
             download="Muhammed-Siyad-Resume.pdf"
@@ -183,6 +180,8 @@ function Hero() {
             <span>↓</span>
           </a>
 
+
+          {/* CONTACT */}
           <a
             href="#contact"
             className="hero-secondary-button"
@@ -190,8 +189,11 @@ function Hero() {
             CONTACT ME
             <span>↗</span>
           </a>
+
         </motion.div>
+
       </div>
+
 
       {/* SOCIAL LINKS */}
       <motion.div
@@ -226,17 +228,22 @@ function Hero() {
         </a>
       </motion.div>
 
+
       {/* SIDE TEXT */}
       <div className="hero-side-text">
-        <span>WEB × CLOUD × CODE</span>
+        <span>
+          WEB × CLOUD × CODE
+        </span>
       </div>
+
 
       {/* YEAR */}
       <div className="hero-year">
         2026
       </div>
 
-      {/* SCROLL */}
+
+      {/* SCROLL INDICATOR */}
       <motion.div
         className="hero-scroll"
         initial={{
@@ -249,12 +256,15 @@ function Hero() {
           delay: 1.5,
         }}
       >
-        <span>SCROLL</span>
+        <span>
+          SCROLL
+        </span>
 
         <div className="scroll-line">
           <span />
         </div>
       </motion.div>
+
     </section>
   );
 }
